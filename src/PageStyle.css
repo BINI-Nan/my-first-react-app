@@ -1,0 +1,152 @@
+/* ===== Common page wrapper ===== */
+.page-wrapper {
+  min-height: calc(100vh - 80px); /* subtract navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px; /* pushes content below navbar */
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* ===== Home Page ===== */
+.home-page {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Welcome text */
+.home-welcome {
+  font-size: 64px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Container for clickable boxes */
+.home-boxes {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual boxes */
+.home-box {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  width: 180px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.home-box:hover {
+  background: rgba(255, 215, 0, 0.4);
+  transform: scale(1.1);
+}
+
+/* ===== About Page ===== */
+.about-page {
+  background: linear-gradient(to right, #42275a, #734b6d);
+  min-height: 100vh; /* ensures full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* vertically center all content */
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+}
+
+/* Welcome / Header text */
+.about-welcome {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+/* Container for boxes */
+.about-boxes {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual boxes */
+.about-box {
+  width: 180px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.about-box:hover {
+  background: rgba(255, 215, 0, 0.4);
+  transform: scale(1.1);
+}
+
+
+/* ===== Contact Page ===== */
+.contact-page {
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* ===== Page text common adjustments ===== */
+.page h1, .page p {
+  color: white;
+}
+
+/* ===== Footer spacing ===== */
+footer {
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
