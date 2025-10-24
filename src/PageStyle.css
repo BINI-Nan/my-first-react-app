@@ -581,13 +581,13 @@
 .contact-container {
   min-height: 100vh;
   background: transparent;
-  padding: 80px 20px 60px; /* Reduced from 120px/80px */
+  padding: 80px 20px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 800px; /* Added max-width to constrain the container */
-  margin: 0 auto; /* Center the container */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-title {
@@ -604,9 +604,9 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 30px 25px; /* Reduced from 40px 35px */
+  padding: 30px 25px;
   width: 100%;
-  max-width: 400px; /* Reduced from 500px */
+  max-width: 400px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -838,7 +838,9 @@
   }
 
   .contact-form-card {
-    padding: 35px 25px;
+    padding: 30px 20px;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .send-button {
@@ -849,7 +851,7 @@
 
 @media (max-width: 480px) {
   .contact-container {
-    padding: 90px 15px 50px;
+    padding: 90px 20px 50px;
   }
 
   .contact-title {
@@ -858,7 +860,9 @@
   }
 
   .contact-form-card {
-    padding: 25px 20px;
+    padding: 25px 18px;
+    max-width: 92%;
+    margin: 0 auto;
   }
 
   .form-group {
