@@ -1,3 +1,11 @@
+/* Apply gradient background to entire page */
+body {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
 /* Make app a column layout with footer at bottom */
 .app-container {
   display: flex;

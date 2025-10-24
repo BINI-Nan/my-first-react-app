@@ -1,43 +1,259 @@
-/* Navbar container */
 .navbar {
   display: flex;
-  justify-content: space-between; /* logo left, links center-ish */
+  justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
+  padding: 20px 80px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  background-color: #0d1b2a;
   z-index: 100;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  background: rgba(26, 26, 26, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
-/* Logo */
 .navbar-logo {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: white;
 }
 
-/* Navigation links container */
 .nav-links {
   display: flex;
-  gap: 25px;
-  position: absolute;
-  left: 50%;       /* start at 50% of navbar width */
-  transform: translateX(-50%); /* truly center links */
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 100px;
 }
 
-/* Individual links */
+.nav-links li {
+  display: inline;
+}
+
 .nav-links a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links li.active a {
   color: #ffd700;
+}
+
+/* Hide icons on desktop */
+.nav-icon {
+  display: none;
+}
+
+/* Menu Bar Icon Button - Base styles */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.menu-icon:hover .menu-line {
+  background-color: #ffd700;
+}
+
+/* When menu is open, lines turn yellow */
+.menu-icon.active .menu-line {
+  background-color: #ffd700;
+}
+
+.menu-line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Desktop menu icon - visible on desktop, hidden on mobile */
+.desktop-menu {
+  display: flex;
+}
+
+/* Mobile menu icon - hidden on desktop, visible on mobile */
+.mobile-menu {
+  display: none;
+}
+
+/* Dropdown Menu - for desktop Profile, Settings, More Options */
+.dropdown-menu {
+  position: absolute;
+  top: 70px;
+  right: 40px;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: none;
+  z-index: 102;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown-item {
+  margin: 0;
+}
+
+.dropdown-item a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-item a:hover {
+  background: rgba(45, 45, 45, 0.95);
+  color: #ffd700;
+  transform: translateX(-5px);
+}
+
+.dropdown-icon {
+  font-size: 20px;
+}
+
+/* Overlay to close menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 30px;
+  }
+  
+  .navbar-logo {
+    font-size: 24px;
+  }
+
+  /* Hide desktop menu icon on mobile */
+  .desktop-menu {
+    display: none;
+  }
+
+  /* Show mobile menu icon */
+  .mobile-menu {
+    display: flex;
+    right: 30px;
+  }
+
+  /* Hide dropdown menu on mobile */
+  .dropdown-menu {
+    display: none;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    height: auto;
+    width: auto;
+    max-width: none;
+    background: transparent;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 12px;
+    transition: right 0.4s ease;
+    backdrop-filter: none;
+    padding-right: 30px;
+    margin-right: 0;
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    display: block;
+  }
+
+  /* Show icons on mobile */
+  .nav-icon {
+    display: inline;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    min-width: 160px;
+    color: white;
+  }
+
+  .nav-links a:hover,
+  .nav-links li.active a {
+    background: rgba(45, 45, 45, 0.95);
+    transform: translateX(-5px);
+    color: #ffd700;
+  }
 }
